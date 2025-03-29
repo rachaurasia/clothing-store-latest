@@ -1,0 +1,36 @@
+<mat-toolbar color="primary" class="header">
+    <!-- Logo -->
+    <span class="logo">Family Fashion</span>
+   <s></s>
+    <!-- Search Bar -->
+    <mat-form-field appearance="outline" class="search-bar">
+      <mat-label>Search products...</mat-label>
+      <input matInput [(ngModel)]="searchQueryHeader" (input)="onSearchChange()" />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  
+    <!-- Navigation Links -->
+    <div class="nav-links">
+      <a mat-button routerLink="/">Products</a>
+      <a mat-button routerLink="/cart">Cart</a>
+      <a mat-button routerLink="/checkout">Checkout</a>
+    </div>
+  
+    <!-- Cart Button -->
+    <button mat-icon-button routerLink="/cart">
+      <mat-icon>shopping_cart</mat-icon>
+      <span class="cart-count">{{ cartItemCount }}</span>
+    </button>
+
+
+
+
+
+
+  
+
+
+
+
+  
+  

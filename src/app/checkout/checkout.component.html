@@ -1,0 +1,39 @@
+<div class="checkout-container">
+    <mat-card class="checkout-card">
+      <mat-card-header>
+        <mat-card-title>Checkout</mat-card-title>
+        <mat-card-subtitle>Review your order and proceed with payment</mat-card-subtitle>
+      </mat-card-header>
+  
+      <mat-divider></mat-divider>
+  
+      <!-- Cart Items List -->
+      <div *ngIf="cartItems.length > 0; else emptyCart">
+        <div *ngFor="let item of cartItems" class="cart-item">
+          <img [src]="item.image" alt="{{ item.name }}" class="product-image">
+          <div class="item-details">
+            <h3>{{ item.name }}</h3>
+            <p class="price">₹{{ item.price }}</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Empty Cart Message -->
+      <ng-template #emptyCart>
+        <p class="empty-cart">Your cart is empty. Add some items to proceed.</p>
+      </ng-template>
+  
+      <mat-divider></mat-divider>
+  
+      <!-- Total Price -->
+      <div class="total-section">
+        <h2>Total: ₹{{ getTotalPrice() }}</h2>
+      </div>
+  
+      <!-- Checkout Button -->
+      <button mat-raised-button color="primary" (click)="checkout()" class="checkout-btn">
+        Proceed to Payment
+      </button>
+    </mat-card>
+  </div>
+  

@@ -1,0 +1,19 @@
+<div class="cart-container">
+    <h2>Shopping Cart</h2>
+    
+    <div *ngIf="cartItems.length === 0">
+      <p>Your cart is empty.</p>
+    </div>
+  
+    <div *ngFor="let item of cartItems; let i = index" class="cart-item">
+      <img [src]="item.image" alt="{{ item.name }}">
+      <div class="cart-info">
+        <h3>{{ item.name }}</h3>
+        <p>${{ item.price }}</p>
+        <button mat-button color="warn" (click)="removeItem(i)">Remove</button>
+      </div>
+    </div>
+  
+    <button *ngIf="cartItems.length" mat-raised-button color="accent" (click)="clearCart()">Clear Cart</button>
+  </div>
+  

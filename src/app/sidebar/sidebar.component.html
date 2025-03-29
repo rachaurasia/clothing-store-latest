@@ -1,0 +1,43 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav mode="side" opened class="sidenav">
+      <mat-list>
+        <!-- Home -->
+        <mat-list-item routerLink="/home">
+          <mat-icon>home</mat-icon> Home
+        </mat-list-item>
+  
+        <!-- Products with Subitems -->
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-icon>shopping_bag</mat-icon> Products
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item routerLink="/products/electronics">📱 Electronics</mat-list-item>
+            <mat-list-item routerLink="/products/clothing">👕 Clothing</mat-list-item>
+            <mat-list-item routerLink="/products/accessories">🎧 Accessories</mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+  
+        <!-- Cart -->
+        <mat-list-item routerLink="/cart">
+          <mat-icon>shopping_cart</mat-icon> Cart
+        </mat-list-item>
+  
+        <!-- Orders -->
+        <mat-list-item routerLink="/orders">
+          <mat-icon>receipt</mat-icon> Orders
+        </mat-list-item>
+  
+        <!-- Settings -->
+        <mat-list-item routerLink="/settings">
+          <mat-icon>settings</mat-icon> Settings
+        </mat-list-item>
+      </mat-list>
+    </mat-sidenav>
+  
+    <!-- Main Content -->
+    <mat-sidenav-content class="content">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

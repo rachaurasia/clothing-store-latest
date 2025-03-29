@@ -1,0 +1,50 @@
+<div class="form-container">
+    <h2>Add New Clothing Item</h2>
+  
+    <form [formGroup]="clothingForm" (ngSubmit)="onSubmit()">
+      <!-- Product Name -->
+      <div class="form-group">
+        <label for="name">Product Name</label>
+        <input id="name" formControlName="name" type="text" class="form-input" placeholder="Enter product name" />
+        <div *ngIf="clothingForm.get('name')?.invalid && clothingForm.get('name')?.touched" class="error-message">
+          Product Name is required and must be at least 3 characters long.
+        </div>
+      </div>
+  
+      <!-- Product Description -->
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description" class="form-input" placeholder="Enter product description"></textarea>
+        <div *ngIf="clothingForm.get('description')?.invalid && clothingForm.get('description')?.touched" class="error-message">
+          Description is required and must be at least 10 characters long.
+        </div>
+      </div>
+  
+      <!-- Price -->
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input id="price" formControlName="price" type="number" class="form-input" placeholder="Enter product price" />
+        <div *ngIf="clothingForm.get('price')?.invalid && clothingForm.get('price')?.touched" class="error-message">
+          Price is required and must be a positive number.
+        </div>
+      </div>
+  
+      <!-- Image Upload -->
+      <div class="form-group">
+        <label for="image">Product Image</label>
+        <input id="image" formControlName="image" type="file" class="form-input" (change)="onImageChange($event)" />
+        <div *ngIf="clothingForm.get('image')?.invalid && clothingForm.get('image')?.touched" class="error-message">
+          Product image is required.
+        </div>
+  
+        <!-- Image Preview -->
+        <div *ngIf="imagePreview" class="image-preview">
+          <img [src]="imagePreview" alt="Image Preview" />
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="submit-btn" [disabled]="clothingForm.invalid">Add Product</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,20 @@
+<div class="product-container">
+    <!-- <mat-form-field appearance="outline" class="search-bar">
+      <mat-label>Search Products</mat-label>
+      <input matInput [(ngModel)]="searchQuery" placeholder="Search by name">
+    </mat-form-field> -->
+  
+    <div class="product-grid">
+      <div class="product-card" *ngFor="let product of filteredProducts">
+        <img [src]="product.image" alt="{{ product.name }}">
+        <div class="product-info">
+          <h2>{{ product.name }}</h2>
+          <p class="price">${{ product.price }}</p>
+          <button mat-raised-button color="primary" (click)="addToCart(product)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <app-cart></app-cart> -->
+  

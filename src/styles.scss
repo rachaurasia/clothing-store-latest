@@ -1,0 +1,123 @@
+/* Import Angular Material Theme */
+@import '@angular/material/prebuilt-themes/azure-blue.css';
+
+/* -------------------- Global Styles -------------------- */
+body {
+  background-color: #e3f2fd; /* Light Blue */
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Container for layout */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* -------------------- Buttons -------------------- */
+button {
+  background-color: #1976d2 !important; /* Primary Light Blue */
+  color: white !important;
+  border-radius: 5px;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #1565c0 !important;
+}
+
+/* -------------------- Navbar -------------------- */
+mat-toolbar {
+  background-color: #2196f3 !important; /* Navbar Light Blue */
+  color: white !important;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+/* -------------------- Product Cards -------------------- */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.price {
+  color: #1976d2;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* -------------------- Cart & Checkout Styles -------------------- */
+.cart-container, .checkout-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-btn {
+  background-color: #1976d2 !important;
+  color: white !important;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+}
+
+/* -------------------- Footer -------------------- */
+.footer {
+  background-color: #1976d2;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* -------------------- Responsive Design -------------------- */
+@media (max-width: 768px) {
+  .product-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 90%;
+  }
+}
+
+
